@@ -5,7 +5,7 @@ services:
     container_name: sftp
     volumes:
         - "./data:/home/upload/:z"
-        - "./config/id_rsa.pub:/home/upload/.ssh/id_rsa.pub"
+        - "./config/id_rsa.pub:/home/upload/.ssh/keys/id_rsa.pub:ro"
         - "/etc/localtime:/etc/localtime:ro"
     ports:
         - "20222:22"
