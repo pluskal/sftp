@@ -1,0 +1,12 @@
+version: "3"
+services:
+  sftp:
+    image: atmoz/sftp:alpine
+    container_name: sftp
+    volumes:
+        - "./data:/home/upload/:z"
+        - "./config/id_rsa.pub:/home/upload/.ssh/id_rsa.pub"
+        - "/etc/localtime:/etc/localtime:ro"
+    ports:
+        - "20222:22"
+    command: upload:XXX:1001
